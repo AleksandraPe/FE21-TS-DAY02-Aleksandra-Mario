@@ -18,50 +18,52 @@ class Vehicles {
     seatNumber:number;
     fuelType:string;
     productionYear:number;
+    image:string;
 
-    constructor(model, kilometers, seatNumber, fuelType, productionYear){
+    constructor(model, kilometers, seatNumber, fuelType, productionYear, image) {
         this.model = model;
         this.kilometers = kilometers;
         this.seatNumber = seatNumber;
         this.fuelType = fuelType;
-        this.productionYear = productionYear
+        this.productionYear = productionYear;
+        this.image = image;
         carArray.push(this);
         console.table(carArray);// no instance yet, so no output
     }
 
 }
 
-let supra = new Vehicles("Toyota Supra", 20000, 2, "gasoline", 2020);
+let supra = new Vehicles("Toyota Supra", 20000, 2, "gasoline", 2020, "https://cdn.pixabay.com/photo/2021/01/04/07/58/jdm-5886801_960_720.jpg");
 
 // console.log(supra.model);
 
 
 class Motorbikes extends Vehicles {
-    cylinders:number;
     cubicCapacity:number;
 
-    constructor(model, kilometers, seatNumber, fuelType, productionYear, cylinders, cubicCapacity) {
-        super(model, kilometers, seatNumber, fuelType, productionYear);
-        this.cylinders = cylinders;
+    constructor(model, kilometers, seatNumber, fuelType, productionYear, image, cubicCapacity) {
+        super(model, kilometers, seatNumber, fuelType, productionYear, image);
         this.cubicCapacity = cubicCapacity;
     }
 
 }
 
 
-let ninja = new Motorbikes("Kawasaki Ninja", 23000, 1, "gasoline", 2015, 4, 1400);
+let ninja = new Motorbikes("Kawasaki Ninja", 23000, 1, "gasoline", 2015, "https://cdn.pixabay.com/photo/2016/09/02/12/44/bike-1639091_960_720.jpg", 1400);
 
 console.log(ninja.model);
 
 
+
 class Trucks extends Vehicles {
     wheels:number;
-    vehiclePayload:number;
-
-    constructor(model, kilometers, seatNumber, fuelType, productionYear, wheels, vehiclePayload) {
-        super(model, kilometers, seatNumber, fuelType, productionYear);
-        this.cylinders = cylinders;
-        this.cubicCapacity = cubicCapacity;
+    
+    constructor(model, kilometers, seatNumber, fuelType, productionYear, image, wheels) {
+        super(model, kilometers, seatNumber, fuelType, productionYear, image);
+        this.wheels = wheels;
     }
     
 }
+
+
+let r450 = new Trucks("Scania R450", 200000, 3, "diesel", 2015, "https://cdn.pixabay.com/photo/2015/07/08/10/38/truck-835863_960_720.jpg", 8); 

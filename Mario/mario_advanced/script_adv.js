@@ -23,38 +23,38 @@ var __extends = (this && this.__extends) || (function () {
 })();
 var carArray = [];
 var Vehicles = /** @class */ (function () {
-    function Vehicles(model, kilometers, seatNumber, fuelType, productionYear) {
+    function Vehicles(model, kilometers, seatNumber, fuelType, productionYear, image) {
         this.model = model;
         this.kilometers = kilometers;
         this.seatNumber = seatNumber;
         this.fuelType = fuelType;
         this.productionYear = productionYear;
+        this.image = image;
         carArray.push(this);
         console.table(carArray); // no instance yet, so no output
     }
     return Vehicles;
 }());
-var supra = new Vehicles("Toyota Supra", 20000, 2, "gasoline", 2020);
+var supra = new Vehicles("Toyota Supra", 20000, 2, "gasoline", 2020, "https://cdn.pixabay.com/photo/2021/01/04/07/58/jdm-5886801_960_720.jpg");
 // console.log(supra.model);
 var Motorbikes = /** @class */ (function (_super) {
     __extends(Motorbikes, _super);
-    function Motorbikes(model, kilometers, seatNumber, fuelType, productionYear, cylinders, cubicCapacity) {
-        var _this = _super.call(this, model, kilometers, seatNumber, fuelType, productionYear) || this;
-        _this.cylinders = cylinders;
+    function Motorbikes(model, kilometers, seatNumber, fuelType, productionYear, image, cubicCapacity) {
+        var _this = _super.call(this, model, kilometers, seatNumber, fuelType, productionYear, image) || this;
         _this.cubicCapacity = cubicCapacity;
         return _this;
     }
     return Motorbikes;
 }(Vehicles));
-var ninja = new Motorbikes("Kawasaki Ninja", 23000, 1, "gasoline", 2015, 4, 1400);
+var ninja = new Motorbikes("Kawasaki Ninja", 23000, 1, "gasoline", 2015, "https://cdn.pixabay.com/photo/2016/09/02/12/44/bike-1639091_960_720.jpg", 1400);
 console.log(ninja.model);
 var Trucks = /** @class */ (function (_super) {
     __extends(Trucks, _super);
-    function Trucks(model, kilometers, seatNumber, fuelType, productionYear, wheels, vehiclePayload) {
-        var _this = _super.call(this, model, kilometers, seatNumber, fuelType, productionYear) || this;
-        _this.cylinders = cylinders;
-        _this.cubicCapacity = cubicCapacity;
+    function Trucks(model, kilometers, seatNumber, fuelType, productionYear, image, wheels) {
+        var _this = _super.call(this, model, kilometers, seatNumber, fuelType, productionYear, image) || this;
+        _this.wheels = wheels;
         return _this;
     }
     return Trucks;
 }(Vehicles));
+var r450 = new Trucks("Scania R450", 200000, 3, "diesel", 2015, "https://cdn.pixabay.com/photo/2015/07/08/10/38/truck-835863_960_720.jpg", 8);
